@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Carlo Fagasto — Developer & Creator</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="lamp-bloom" aria-hidden="true"></div>
+
+<div id="cursor-dot" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">cf.dev</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="scanline-overlay" aria-hidden="true"></div>
+
+    <div class="hero-left">
+      <p class="hero-eyebrow reveal">Informatics Engineering · Jakarta</p>
+
+      <h1 class="hero-name reveal reveal-delay-1">
+        Carlo<br><em>Fagasto</em>
+      </h1>
+
+      <p class="hero-descriptor reveal reveal-delay-2">
+        Full-stack developer, game builder, and creative technologist.
+        I turn ideas into working products — from appointment platforms
+        to e-commerce systems to interactive Unity experiences.
+      </p>
+
+      <div class="hero-tags reveal reveal-delay-2">
+        <span class="tag">Flutter</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">Laravel</span>
+        <span class="tag">Unity · C#</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Dart</span>
+      </div>
+
+      <a href="#contact" class="hero-cta reveal reveal-delay-3">
+        Get in touch
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <div class="scroll-hint reveal reveal-delay-3">Scroll</div>
+    </div>
+
+    <div class="hero-right reveal reveal-delay-2">
+      <div class="photo-frame">
+        <div class="photo-placeholder">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="16" r="7" stroke="#6B6B72" stroke-width="1.2"/>
+            <path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#6B6B72" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <span>YOUR PHOTO HERE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="about-strip reveal" style="margin-bottom: 100px;">
+    <div class="about-cell">
+      <div class="about-cell-label">Currently</div>
+      <div class="about-cell-value"><strong>Semester 4</strong> · Universitas Tarumanagara<br>GPA 3.52 / 4.00</div>
+    </div>
+    <div class="about-divider"></div>
+    <div class="about-cell">
+      <div class="about-cell-label">Freelancing</div>
+      <div class="about-cell-value"><strong>Content editing</strong> for an Australian indie film-maker — IG, TikTok, YouTube</div>
+    </div>
+    <div class="about-divider"></div>
+    <div class="about-cell">
+      <div class="about-cell-label">Targeting</div>
+      <div class="about-cell-value"><strong>Apple Developer Academy</strong> — iOS &amp; macOS product development</div>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <span class="section-count">4 projects</span>
+    </div>
+
+    <div class="bento">
+
+      <div class="bcard bcard-wide featured reveal">
+        <div class="bcard-eyebrow">Full-Stack Web · Client Work</div>
+        <div class="bcard-title large">TenThirty</div>
+        <div class="bcard-desc">Environmental education platform. Users book appointments with TenThirty staff; admins control every page through a CMS dashboard — no developer required for content updates.</div>
+        <div class="bcard-stack">
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">Node.js</span>
+          <span class="stack-tag">Laravel</span>
+          <span class="stack-tag">MongoDB Atlas</span>
+          <span class="stack-tag">PHP</span>
+        </div>
+        <span class="bcard-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+
+      <div class="bcard bcard-mid reveal reveal-delay-1" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div class="bcard-eyebrow">My Role</div>
+          <div class="bcard-title">Frontend Lead</div>
+          <div class="bcard-desc" style="margin-top:8px; font-size:12px;">Architected component system, coordinated dev handoff, managed client-facing UI reviews.</div>
+        </div>
+        <div class="bcard-stat">
+          <span class="stat-number">5</span>
+          <span class="stat-label">person<br>team</span>
+        </div>
+      </div>
+
+      <div class="bcard bcard-rect reveal reveal-delay-1">
+        <div class="bcard-eyebrow">E-Commerce · Client Work</div>
+        <div class="bcard-title">PickaBrick</div>
+        <div class="bcard-desc">Lego resell marketplace. Full buy/sell flow for users; trend-aware stock dashboard for the owner.</div>
+        <div class="bcard-stack">
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">Laravel</span>
+          <span class="stack-tag">MongoDB</span>
+        </div>
+        <span class="bcard-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+
+      <div class="bcard bcard-sq reveal" style="position:relative; overflow:hidden; background: var(--panel-raised);">
+        <div class="bcard-grid-deco"></div>
+        <div style="position:relative;z-index:1;">
+          <div class="bcard-eyebrow">Engine</div>
+          <div class="bcard-title" style="font-size:14px;">Unity</div>
+          <div class="bcard-desc" style="font-size:12px; margin-top:6px;">C# · 2D/3D builds</div>
+        </div>
+      </div>
+
+      <div class="bcard bcard-rect reveal reveal-delay-2">
+        <div class="bcard-eyebrow">Creative · Freelance</div>
+        <div class="bcard-title">Content Editing</div>
+        <div class="bcard-desc">20+ short-form video edits for an Australian indie filmmaker — cut and formatted for Reels, TikTok, and YouTube. Async collaboration across time zones.</div>
+        <div class="bcard-stack">
+          <span class="stack-tag">CapCut</span>
+          <span class="stack-tag">Short-form</span>
+          <span class="stack-tag">Multi-platform</span>
+        </div>
+      </div>
+
+      <div class="bcard bcard-sm reveal reveal-delay-1" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div class="bcard-eyebrow">Mobile</div>
+        <div class="bcard-title" style="font-size:15px;">Flutter</div>
+        <div style="font-family: var(--mono); font-size:11px; color:var(--text-muted);">Dart · Cross-platform</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">Technical Stack</h2>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-list">
+          <div class="skill-item">Python</div>
+          <div class="skill-item">TypeScript</div>
+          <div class="skill-item">JavaScript</div>
+          <div class="skill-item">PHP</div>
+          <div class="skill-item">Dart</div>
+          <div class="skill-item">C#</div>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-1">
+        <div class="skill-group-label">Frameworks</div>
+        <div class="skill-list">
+          <div class="skill-item">Next.js</div>
+          <div class="skill-item">Flutter</div>
+          <div class="skill-item">Laravel</div>
+          <div class="skill-item">Node.js</div>
+          <div class="skill-item">Unity</div>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-2">
+        <div class="skill-group-label">Tools</div>
+        <div class="skill-list">
+          <div class="skill-item">Git · GitHub</div>
+          <div class="skill-item">Figma</div>
+          <div class="skill-item">MongoDB Atlas</div>
+          <div class="skill-item">CapCut</div>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-3">
+        <div class="skill-group-label">Currently Learning</div>
+        <div class="skill-list">
+          <div class="skill-item">Swift · SwiftUI</div>
+          <div class="skill-item">Xcode</div>
+          <div class="skill-item">iOS Development</div>
+          <div class="skill-item">Data Mining</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="contact-section" id="contact">
+  <div style="max-width:1200px; margin:0 auto; padding: 0 40px;">
+    <div class="contact-inner">
+      <div class="contact-left reveal">
+        <h2>Let's build<br><em>something</em><br>together.</h2>
+        <p style="margin-top:20px;">Open to opportunities, collaborations, and conversations. Whether you're from the Apple Developer Academy or just want to talk tech — I'm here.</p>
+      </div>
+      <div class="contact-right reveal reveal-delay-1">
+        <a class="contact-row" href="mailto:fagastocarlo@gmail.com">
+          <div>
+            <div class="contact-row-label">Email</div>
+            <div class="contact-row-value">fagastocarlo@gmail.com</div>
+          </div>
+          <div class="contact-row-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12L14 4M2 4h12v8H2V4z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+        </a>
+        <a class="contact-row" href="tel:+6285157113664">
+          <div>
+            <div class="contact-row-label">Phone / WhatsApp</div>
+            <div class="contact-row-value">+62 851-5711-3664</div>
+          </div>
+          <div class="contact-row-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3h3l1.5 3.5-1.5 1a8 8 0 003.5 3.5l1-1.5L14 11v3a1 1 0 01-1 1C5.5 15 1 10.5 1 5a1 1 0 011-1l1-1z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+        </a>
+        <a class="contact-row" href="https://github.com/rinosen" target="_blank" rel="noopener">
+          <div>
+            <div class="contact-row-label">GitHub</div>
+            <div class="contact-row-value">github.com/rinosen</div>
+          </div>
+          <div class="contact-row-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1C4.134 1 1 4.134 1 8c0 3.09 2.006 5.713 4.787 6.635.35.064.478-.152.478-.337v-1.18c-1.946.423-2.355-.94-2.355-.94-.318-.808-.777-1.023-.777-1.023-.635-.434.048-.425.048-.425.702.049 1.072.72 1.072.72.624 1.069 1.636.76 2.035.582.064-.452.244-.76.444-.935-1.553-.176-3.185-.776-3.185-3.456 0-.763.272-1.388.72-1.877-.072-.177-.312-.888.069-1.85 0 0 .586-.188 1.92.715A6.68 6.68 0 018 4.7c.594.003 1.19.08 1.748.234 1.332-.903 1.917-.715 1.917-.715.382.962.142 1.673.07 1.85.449.49.72 1.114.72 1.877 0 2.687-1.635 3.278-3.193 3.45.251.217.474.644.474 1.298v1.924c0 .187.127.405.482.336C12.996 13.71 15 11.088 15 8c0-3.866-3.134-7-7-7z" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+          </div>
+        </a>
+        <div class="contact-row" style="cursor:default; opacity:0.5;">
+          <div>
+            <div class="contact-row-label">Location</div>
+            <div class="contact-row-value">Jakarta, Indonesia</div>
+          </div>
+          <div class="contact-row-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 118 4a1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Carlo Fagasto</span>
+  <span>Built with <span class="footer-dot">♥</span> in Jakarta</span>
+  <span style="font-family:var(--mono); font-size:10px; color: var(--text-muted);">cf.dev</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
