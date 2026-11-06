@@ -48,7 +48,7 @@ const DEFAULT_TYPEWRITER_WORDS = Object.freeze([
   'Machine Learning',
   'Full-Stack Web',
   'Predictive Models',
-  'Telemetry Engines'
+  'Short-Form Video'
 ]);
 
 function initializePortfolio() {
