@@ -19,8 +19,8 @@
   --border-accent: #FFFFFF;
 
   --text-primary: #FFFFFF;
-  --text-secondary: #A1A1AA;
-  --text-tertiary: #71717A;
+  --text-secondary: #C8C8CF;
+  --text-tertiary: #92929D;
   --text-inverse: #070709;
 
   --accent-white: #FFFFFF;
@@ -34,12 +34,11 @@
 
   --status-live: var(--kissland-neon);
   --status-live-glow: var(--kissland-glow);
-  /* Typography */
-  --font-display: 'Syne', 'Space Grotesk', -apple-system, sans-serif;
-  --font-headline: 'Space Grotesk', -apple-system, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  /* Typography - Charles Leclerc Official System (Manrope Friendly Body + Barlow Condensed Athletic Grotesk) */
+  --font-display: 'Barlow Condensed', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline: 'Barlow Condensed', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-
   /* Layout & Geometry */
   --max-width: 1260px;
   --header-height: 76px;
@@ -75,8 +74,8 @@
   --border-accent: #000000;
 
   --text-primary: #0A0A0C;
-  --text-secondary: #52525B;
-  --text-tertiary: #71717A;
+  --text-secondary: #42424B;
+  --text-tertiary: #6C6C78;
   --text-inverse: #FFFFFF;
 
   --accent-white: #000000;
@@ -114,7 +113,9 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -242,15 +243,16 @@ img {
 .brand-name {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 15px;
-  letter-spacing: -0.01em;
+  font-size: 17px;
+  letter-spacing: 0.02em;
   line-height: 1.1;
   text-transform: uppercase;
 }
 
 .brand-status-line {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
@@ -305,11 +307,11 @@ img {
 }
 
 .nav-link {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: var(--text-secondary);
   padding: 8px 14px;
   border-radius: var(--radius-xs);
@@ -319,10 +321,11 @@ img {
   align-items: center;
   gap: 6px;
 }
-
 .nav-idx {
+  font-family: var(--font-mono);
   color: var(--text-tertiary);
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .nav-link:hover {
@@ -342,10 +345,10 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   padding: 7px 12px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-default);
@@ -370,8 +373,8 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -458,7 +461,7 @@ main {
 }
 
 .telemetry-tag {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -475,16 +478,16 @@ main {
 
 .section-headline {
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.5vw, 48px);
+  font-size: clamp(38px, 5.2vw, 56px);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  letter-spacing: 0.01em;
+  line-height: 0.96;
   text-transform: uppercase;
 }
 
 .section-badge-counter {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
   font-weight: 700;
   padding: 6px 14px;
   border: 1px solid var(--border-strong);
@@ -561,10 +564,10 @@ main {
 }
 
 .hero-status-text {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-primary);
 }
@@ -577,10 +580,10 @@ main {
 /* Bold Lando Norris / Motorsport Typography */
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(48px, 6.8vw, 84px);
+  font-size: clamp(54px, 7.5vw, 96px);
   font-weight: 800;
-  line-height: 0.94;
-  letter-spacing: -0.035em;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -592,9 +595,9 @@ main {
 
 .hero-title-line-2 {
   display: block;
-  font-style: italic;
-  letter-spacing: -0.02em;
-}
+    font-style: italic;
+    letter-spacing: -0.01em;
+  }
 
 .hero-title-line-3 {
   display: block;
@@ -611,15 +614,16 @@ main {
 
 /* Hero Bio Description */
 .hero-bio {
-  font-size: clamp(15px, 1.3vw, 17px);
+  font-size: clamp(16px, 1.35vw, 18px);
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
   max-width: 620px;
 }
 
 .hero-bio strong {
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Hero Tech Tags Pill Bar */
@@ -630,10 +634,10 @@ main {
 }
 
 .tech-tag-pill {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   padding: 6px 12px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-default);
@@ -662,10 +666,10 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   background: var(--text-primary);
   color: var(--text-inverse);
@@ -695,10 +699,10 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   background: var(--bg-card);
   color: var(--text-primary);
@@ -718,8 +722,8 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
   font-weight: 600;
   color: var(--text-secondary);
   padding: 14px 16px;
@@ -879,14 +883,15 @@ main {
 .driver-fullname {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 16px;
-  letter-spacing: -0.01em;
+  font-size: 19px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .driver-subline {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 500;
   color: var(--text-secondary);
 }
 
@@ -927,10 +932,10 @@ main {
 }
 
 .metric-top-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--text-secondary);
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -947,10 +952,10 @@ main {
 
 .metric-value {
   font-family: var(--font-headline);
-  font-size: clamp(34px, 3.8vw, 44px);
-  font-weight: 700;
+  font-size: clamp(38px, 4.2vw, 48px);
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   color: var(--text-primary);
   font-variant-numeric: tabular-nums lining-nums;
 }
@@ -963,10 +968,11 @@ main {
 }
 
 .metric-desc {
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
   color: var(--text-secondary);
   margin-top: 6px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -1021,8 +1027,8 @@ main {
   padding: 0 16px;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 16px;
-  letter-spacing: 0.06em;
+  font-size: 19px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-primary);
 }
@@ -1033,11 +1039,12 @@ main {
 }
 
 .marquee-lane-2 .marquee-item {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--text-secondary);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /* ==========================================================================
@@ -1082,10 +1089,10 @@ main {
 }
 
 .bento-spec-tag {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: var(--text-secondary);
   text-transform: uppercase;
 }
@@ -1099,17 +1106,18 @@ main {
 
 .bento-title {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
   margin-bottom: 12px;
   text-transform: uppercase;
 }
-
 .bento-body {
-  font-size: 15px;
+  font-size: 15.5px;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
 }
 
 .bento-body strong {
@@ -1124,10 +1132,11 @@ main {
 }
 
 .bento-badge {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
   font-weight: 600;
-  padding: 4px 10px;
+  letter-spacing: 0.02em;
+  padding: 5px 11px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xs);
@@ -1147,10 +1156,10 @@ main {
 }
 
 .filter-btn {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 8px 16px;
   border: 1px solid var(--border-default);
@@ -1240,7 +1249,7 @@ main {
 }
 
 .pos-category {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1249,8 +1258,8 @@ main {
 }
 
 .card-role-pill {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.05em;
   padding: 4px 10px;
@@ -1263,22 +1272,23 @@ main {
 
 .project-title {
   font-family: var(--font-display);
-  font-size: clamp(22px, 2.5vw, 28px);
+  font-size: clamp(26px, 2.8vw, 32px);
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
+  line-height: 1.04;
   margin-bottom: 14px;
   text-transform: uppercase;
 }
 
 .lead-build .project-title {
-  font-size: clamp(26px, 3.2vw, 36px);
+  font-size: clamp(30px, 3.5vw, 42px);
 }
 
 .project-narrative {
-  font-size: 15px;
+  font-size: 15.5px;
   color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
 }
 
 /* Telemetry Callout Box (Measurable Impact) */
@@ -1300,13 +1310,13 @@ main {
   margin-bottom: 4px;
   display: block;
 }
-
 .impact-detail-text {
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.5;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
 }
 
 /* Tech Badges List */
@@ -1318,10 +1328,11 @@ main {
 }
 
 .stack-tag {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
   font-weight: 600;
-  padding: 4px 10px;
+  letter-spacing: 0.02em;
+  padding: 5px 11px;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xs);
@@ -1335,10 +1346,11 @@ main {
   justify-content: space-between;
   border-top: 1px solid var(--border-subtle);
   padding-top: 16px;
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: var(--text-secondary);
   transition: color var(--duration-fast) ease;
 }
@@ -1407,9 +1419,9 @@ main {
 
 .spec-title {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
@@ -1421,15 +1433,16 @@ main {
 }
 
 .spec-item {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
   gap: 10px;
+  line-height: 1.5;
   transition: color var(--duration-fast) ease, transform var(--duration-fast) ease;
 }
-
 .spec-item::before {
   content: "—";
   color: var(--text-tertiary);
@@ -1465,10 +1478,10 @@ main {
 
 .contact-huge-headline {
   font-family: var(--font-display);
-  font-size: clamp(34px, 5vw, 60px);
+  font-size: clamp(38px, 5.5vw, 68px);
   font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+  line-height: 0.96;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   margin-bottom: 18px;
 }
@@ -1480,9 +1493,10 @@ main {
 }
 
 .contact-lead-sub {
-  font-size: 17px;
+  font-size: 17.5px;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
 }
 
 .contact-lead-sub strong {
@@ -1522,17 +1536,16 @@ main {
 }
 
 .channel-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--text-tertiary);
   text-transform: uppercase;
 }
-
 .channel-value {
-  font-family: var(--font-headline);
-  font-size: 17px;
+  font-family: var(--font-body);
+  font-size: 16.5px;
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.01em;
@@ -1561,15 +1574,16 @@ main {
 }
 
 .inquiry-instruction {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
   color: var(--text-secondary);
-  display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .keyboard-hint-pill {
+  font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 700;
   padding: 3px 8px;
@@ -1619,8 +1633,8 @@ main {
 }
 
 .footer-copy-text {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
   color: var(--text-secondary);
 }
 
@@ -1631,10 +1645,10 @@ main {
 }
 
 .footer-status-tag {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--text-tertiary);
 }
 
@@ -1642,10 +1656,11 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   padding: 6px 12px;
   border: 1px solid var(--border-default);
   background: var(--bg-card);
@@ -1826,7 +1841,8 @@ main {
   }
 
   .hero-title {
-    font-size: 42px;
+    font-size: clamp(40px, 12vw, 48px);
+    line-height: 0.95;
   }
 
   .btn-primary,
