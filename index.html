@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carlo Fagasto · Data Analytics &amp; Full-Stack Systems</title>
+  <title>Carlo Fagasto · Data Analyst &amp; Tech Specialist</title>
   <meta name="description"
-    content="Portfolio of Carlo Fagasto, Informatics Engineering undergraduate (Semester 5, 3.62 GPA) at Universitas Tarumanagara seeking Data Analytics and Software Engineering Internships." />
+    content="Portfolio of Carlo Fagasto, Informatics Engineering undergraduate (Semester 5, 3.62 GPA) at Universitas Tarumanagara seeking Data Analyst and data-related internships, open to all tech and software roles." />
   <meta name="author" content="Carlo Fagasto" />
-  <meta name="keywords"
-    content="Carlo Fagasto, Data Analytics, Full-Stack, Machine Learning, K-Means, PCA, Next.js, TypeScript, Python, Jakarta" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,699 +15,402 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .hero-portrait { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 </head>
 
 <body>
 
-  <a href="#main-content" class="skip-link">SKIP TO MAIN CONTENT [TAB]</a>
-
+  <!-- ═══ HEADER ═══ -->
   <header class="site-header" id="site-header">
-    <div class="nav-container">
-      <a href="#home" class="nav-brand" aria-label="Carlo Fagasto Homepage">
-        <span class="brand-badge">CF</span>
-        <div class="brand-info">
-          <span class="brand-name">Carlo Fagasto</span>
-          <span class="brand-status-line">
-            <span class="status-dot-pulse" aria-hidden="true"></span>
-            <span>UNTAR S5</span>
-          </span>
-        </div>
-      </a>
-
-      <div class="telemetry-time-widget" aria-label="Current Jakarta Time">
-        <span class="time-label">WIB / JAKARTA:</span>
-        <span class="time-val" id="telemetry-clock">00:00:00</span>
+    <nav class="nav-container">
+      <a href="#home" class="nav-brand">CF</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Work</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
-
-      <ul class="nav-menu" id="nav-menu">
-        <li>
-          <a href="#about" class="nav-link">
-            <span class="nav-idx">01</span> Profile
-          </a>
-        </li>
-        <li>
-          <a href="#projects" class="nav-link">
-            <span class="nav-idx">02</span> Builds
-          </a>
-        </li>
-        <li>
-          <a href="#skills" class="nav-link">
-            <span class="nav-idx">03</span> Toolkit
-          </a>
-        </li>
-        <li>
-          <a href="#contact" class="nav-link">
-            <span class="nav-idx">04</span> Contact
-          </a>
-        </li>
-      </ul>
-
       <div class="nav-actions">
-        <button id="theme-toggle" class="theme-toggle-btn"
-          aria-label="Toggle theme between Dark Carbon and Light Paper">
-          <span class="theme-mode-label" id="theme-label">INK // DARK</span>
-        </button>
-
-        <a href="#contact" class="btn-cta-nav">
-          <span>Inquire</span>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" stroke="currentColor" stroke-width="1.8"
-              stroke-linecap="round" stroke-linejoin="round" />
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
           </svg>
-        </a>
-
-        <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-line line-1"></span>
-          <span class="hamburger-line line-2"></span>
-          <span class="hamburger-line line-3"></span>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
         </button>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
       </div>
-    </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </nav>
   </header>
 
-  <main id="main-content">
+  <main>
 
-    <section class="section-wrapper hero-section" id="home">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-status-ribbon reveal-element">
-            <span class="status-dot-pulse" aria-hidden="true"></span>
-            <span class="hero-status-text">SEMESTER 5 · 3.62 GPA · OPEN FOR INTERNSHIP</span>
-            <span class="hero-status-tag">// 2026-2027</span>
-          </div>
+    <!-- ═══ HERO — Face centered, cutout with moving texture background ═══ -->
+    <section class="section-hero" id="home">
+      <div class="hero-inner">
+        <!-- Moving background video texture -->
+        <video class="hero-bg-video" autoplay loop muted playsinline preload="auto" aria-hidden="true">
+          <source src="hero-texture.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-bg-overlay" aria-hidden="true"></div>
 
-          <h1 class="hero-title reveal-element reveal-stagger-1">
-            <span class="hero-title-line-1">High-Velocity</span>
-            <span class="hero-title-line-2 hero-typewriter-container" aria-label="Data Analytics">
-              <span class="hero-typewriter-text" id="hero-typewriter"
-                data-words='["Data Analytics", "Machine Learning", "Full-Stack Web", "Predictive Models", "Short-Form Video"]'>Data Analytics</span><span class="typewriter-cursor" aria-hidden="true"></span>
-            </span>
-            <span class="hero-title-line-3">&amp; Systems</span>
-          </h1>
+        <!-- Big Name Backdrop — Layered behind portrait -->
+        <div class="hero-name-backdrop" aria-hidden="true">
+          <span class="hero-line hero-line-top">Carlo</span>
+          <span class="hero-line hero-line-bottom">Fagasto</span>
+        </div>
 
-          <p class="hero-bio reveal-element reveal-stagger-2">
-            Informatics Engineering undergraduate at <strong>Universitas Tarumanagara (3.62 GPA)</strong>.
-            Engineering exploratory data analytics, statistical machine learning pipelines, and robust full-stack
-            architectures.
-            Actively seeking a <strong>Data Analytics or Software Engineering Internship</strong> to translate
-            high-dimensional data into measurable velocity.
-          </p>
+        <!-- Centered Subject Cutout Portrait (Background removed) -->
+        <div class="hero-portrait-wrap">
+          <img src="Foto_Potrait_Cutout.png" alt="Carlo Fagasto portrait photograph" class="hero-portrait" width="960" height="1280" fetchpriority="high" />
+        </div>
 
-          <div class="hero-tech-strip reveal-element reveal-stagger-2" aria-label="Core Technical Stack">
-            <span class="tech-tag-pill">Python (Pandas · NumPy)</span>
-            <span class="tech-tag-pill">SQL &amp; Relational</span>
-            <span class="tech-tag-pill">K-Means &amp; PCA</span>
-            <span class="tech-tag-pill">Next.js &amp; React</span>
-            <span class="tech-tag-pill">TypeScript</span>
-            <span class="tech-tag-pill">MongoDB Atlas</span>
-            <span class="tech-tag-pill">RESTful APIs</span>
-          </div>
+        <!-- Top Status Badge — Persistent at top -->
+        <div class="hero-status-top">
+          <span class="status-pulse-dot" aria-hidden="true"></span>
+          <span>Semester 5 · 3.62 GPA · Universitas Tarumanagara</span>
+        </div>
 
-          <div class="hero-action-cluster reveal-element reveal-stagger-3">
-            <a href="#contact" class="btn-primary">
-              <span>Initiate Inquiry</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-
-            <a href="#projects" class="btn-secondary">
-              <span>View Builds</span>
-              <span style="font-family: var(--font-mono); font-size: 11px;">[04]</span>
-            </a>
-
-            <button type="button" class="btn-copy-quick" id="btn-copy-email" data-email="fagastocarlo@gmail.com">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              <span>Copy Email</span>
-            </button>
+        <!-- Bottom Role Pill -->
+        <div class="hero-bottom-info">
+          <div class="hero-role-badge reveal">
+            <span class="role-primary">Data Analyst</span>
+            <span class="role-divider">//</span>
+            <span class="role-secondary">Open to All Tech Roles</span>
           </div>
         </div>
 
-        <div class="hero-visual reveal-element reveal-stagger-2">
-          <div class="driver-telemetry-card corner-ticks" id="driver-card">
-            <div class="driver-card-header">
-              <span class="driver-no">POS // 01</span>
-              <span class="driver-spec">SPEC // INFORMATICS</span>
-            </div>
-
-            <div class="driver-img-wrapper">
-              <img src="Foto_Potrait.jpg" alt="Portrait photograph of Carlo Fagasto" class="driver-portrait-img"
-                width="960" height="1280" fetchpriority="high" />
-              <div class="driver-grid-stamp">[UNTAR.ID // 2026]</div>
-              <div class="driver-corner-cut">GPA 3.62 / 4.00</div>
-            </div>
-
-            <div class="driver-card-footer">
-              <div class="driver-meta">
-                <span class="driver-fullname">Carlo Fagasto</span>
-                <span class="driver-subline">Jakarta, ID · Available Remotely &amp; On-Site</span>
-              </div>
-              <div class="driver-barcode-visual" aria-hidden="true">||| | |||| || |</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-metrics-grid reveal-element reveal-stagger-3">
-        <div class="metric-bento-box corner-ticks">
-          <div class="metric-top-label">
-            <span>Academic Standing</span>
-            <span>UNTAR</span>
-          </div>
-          <div class="metric-number-wrap">
-            <span class="metric-value counter-value" data-target="3.62" data-decimals="2">3.62</span>
-            <span class="metric-unit">/ 4.00</span>
-          </div>
-          <p class="metric-desc">Informatics Engineering (Semester 5)</p>
-        </div>
-
-        <div class="metric-bento-box corner-ticks">
-          <div class="metric-top-label">
-            <span>Commercial Output</span>
-            <span>GLOBAL</span>
-          </div>
-          <div class="metric-number-wrap">
-            <span class="metric-value counter-value" data-target="20">20</span>
-            <span class="metric-unit">+ ASSETS</span>
-          </div>
-          <p class="metric-desc">Australian Client short-form video deliverables</p>
-        </div>
-
-        <div class="metric-bento-box corner-ticks">
-          <div class="metric-top-label">
-            <span>Dimensionality Reduction</span>
-            <span>PCA</span>
-          </div>
-          <div class="metric-number-wrap">
-            <span class="metric-value counter-value" data-target="60">60</span>
-            <span class="metric-unit">%</span>
-          </div>
-          <p class="metric-desc">Retained &gt;85% dataset variance in AQICN mining</p>
-        </div>
-
-        <div class="metric-bento-box corner-ticks">
-          <div class="metric-top-label">
-            <span>Revision Turnaround</span>
-            <span>VELOCITY</span>
-          </div>
-          <div class="metric-number-wrap">
-            <span class="metric-unit">&lt;</span>
-            <span class="metric-value counter-value" data-target="12">12</span>
-            <span class="metric-unit">HOURS</span>
-          </div>
-          <p class="metric-desc">Slashing revision cycles down from 48h</p>
+        <!-- Dedicated Scroll Cue -->
+        <div class="hero-scroll-cue" aria-hidden="true">
+          <span>Scroll</span>
+          <svg width="14" height="22" viewBox="0 0 16 24" fill="none">
+            <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.6" />
+            <circle class="scroll-dot" cx="8" cy="8" r="2.2" fill="var(--kissland-green)" />
+          </svg>
         </div>
       </div>
     </section>
 
-    <div class="marquee-section" aria-hidden="true">
-      <div class="marquee-lane marquee-lane-1">
-        <span class="marquee-item">DATA ANALYTICS <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">STATISTICAL MODELING <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">K-MEANS &amp; PCA CLUSTERING <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">MONGODB ATLAS <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">NEXT.JS &amp; REACT <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">TYPESCRIPT ARCHITECTURE <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">HIGH-VELOCITY DELIVERY <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">JAKARTA <span class="marquee-divider">✦</span></span>
-        <!-- Duplicated for seamless infinite loop -->
-        <span class="marquee-item">DATA ANALYTICS <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">STATISTICAL MODELING <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">K-MEANS &amp; PCA CLUSTERING <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">MONGODB ATLAS <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">NEXT.JS &amp; REACT <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">TYPESCRIPT ARCHITECTURE <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">HIGH-VELOCITY DELIVERY <span class="marquee-divider">✦</span></span>
-        <span class="marquee-item">JAKARTA <span class="marquee-divider">✦</span></span>
-      </div>
+    <!-- ═══ ABOUT — Horizontal scroll section ═══ -->
+    <section class="section-horizontal" id="about">
+      <div class="horizontal-track">
 
-      <div class="marquee-lane marquee-lane-2">
-        <span class="marquee-item">UNIVERSITAS TARUMANAGARA // SEMESTER 5 <span
-            class="marquee-divider">///</span></span>
-        <span class="marquee-item">3.62 GPA STANDING <span class="marquee-divider">///</span></span>
-        <span class="marquee-item">OPEN FOR INTERNSHIP 2026-2027 <span class="marquee-divider">///</span></span>
-        <span class="marquee-item">CLEAN CODE &amp; QUANTITATIVE RIGOR <span class="marquee-divider">///</span></span>
-        <span class="marquee-item">MEASURABLE BUSINESS IMPACT <span class="marquee-divider">///</span></span>
-        <span class="marquee-item">SHORT-FORM CONTENT PRODUCTION <span class="marquee-divider">///</span></span>
-        <!-- Duplicated for seamless infinite loop -->
-        <span class="marquee-item">UNIVERSITAS TARUMANAGARA // SEMESTER 5 <span
-            class="marquee-divider">///</span></span>
-        <span class="marquee-item">3.62 GPA STANDING <span class="marquee-divider">///</span></span>
-        <span class="marquee-item">OPEN FOR INTERNSHIP 2026-2027 <span class="marquee-divider">///</span></span>
-        <span class="marquee-item">CLEAN CODE &amp; QUANTITATIVE RIGOR <span class="marquee-divider">///</span></span>
-        <span class="marquee-item">MEASURABLE BUSINESS IMPACT <span class="marquee-divider">///</span></span>
-        <span class="marquee-item">SHORT-FORM CONTENT PRODUCTION <span class="marquee-divider">///</span></span>
-      </div>
-    </div>
-
-    <section class="section-wrapper" id="about">
-      <div class="section-header-bar reveal-element">
-        <div class="section-tag-group">
-          <span class="telemetry-tag"><span class="tag-bracket">[</span> 01 // PROFILE &amp; TELEMETRY <span
-              class="tag-bracket">]</span></span>
-          <h2 class="section-headline">Foundation &amp; Speed</h2>
+        <div class="h-panel h-panel-intro">
+          <span class="panel-idx">01</span>
+          <h2 class="panel-title">Foundation<br />&amp; Speed</h2>
         </div>
-        <span class="section-badge-counter">ACADEMIC &amp; COMMERCIAL RECORD</span>
-      </div>
 
-      <div class="bento-profile-grid">
-        <div class="bento-card corner-ticks reveal-element">
-          <div>
-            <div class="bento-card-top">
-              <span class="bento-spec-tag">SPEC 01 // HIGHER EDUCATION</span>
-              <span class="bento-icon-badge">[UNTAR.AC.ID]</span>
-            </div>
-            <h3 class="bento-title">Universitas Tarumanagara</h3>
-            <p class="bento-body">
-              <strong>B.S. in Informatics Engineering (Semester 5)</strong> · Expected 2028.<br />
-              Maintained a cumulative <strong>GPA of 3.62 / 4.00</strong> with rigorous focus on Data Mining, Database
-              Engineering, Advanced Algorithms &amp; Data Structures, Object-Oriented Systems, and Applied Probability
-              &amp; Statistics.
+        <div class="h-panel h-panel-card">
+          <div class="story-card">
+            <span class="story-label">Higher Education</span>
+            <h3 class="story-heading">Universitas Tarumanagara</h3>
+            <p class="story-body">
+              B.S. in Informatics Engineering (Semester 5) · Expected 2028.
+              Maintained a cumulative <strong>GPA of 3.62 / 4.00</strong> with focus on
+              Data Mining, Database Engineering, Algorithms &amp; Data Structures,
+              Object-Oriented Systems, and Applied Probability &amp; Statistics.
             </p>
-          </div>
-          <div class="bento-badge-list">
-            <span class="bento-badge">GPA 3.62 / 4.00</span>
-            <span class="bento-badge">Data Mining</span>
-            <span class="bento-badge">Database Systems</span>
-            <span class="bento-badge">Algorithms</span>
+            <div class="story-badges">
+              <span>GPA 3.62 / 4.00</span>
+              <span>Data Mining</span>
+              <span>Database Systems</span>
+              <span>Algorithms</span>
+            </div>
           </div>
         </div>
 
-        <div class="bento-card highlighted corner-ticks reveal-element reveal-stagger-1">
-          <div>
-            <div class="bento-card-top">
-              <span class="bento-spec-tag">SPEC 02 // MISSION</span>
-              <span class="bento-icon-badge">[TARGET]</span>
-            </div>
-            <h3 class="bento-title">Internship Ready</h3>
-            <p class="bento-body">
-              Targeting <strong>Data Analytics &amp; Software Engineering Internships</strong>. Ready to deploy
-              automated ingestion pipelines, predictive and exploratory clustering (PCA/K-Means), and quantitative data
-              models that directly inform strategic business moves.
+        <div class="h-panel h-panel-card">
+          <div class="story-card story-card--accent">
+            <span class="story-label">Target Role &amp; Adaptability</span>
+            <h3 class="story-heading">Data Analyst · Open to All Roles</h3>
+            <p class="story-body">
+              Primary career focus on <strong>Data Analyst</strong> and data-driven disciplines.
+              Equally versatile, proactive, and <strong>open to all technology and software engineering internships</strong>,
+              ready to deploy analytical pipelines, predictive models (PCA/K-Means), and quantitative solutions that accelerate team execution.
             </p>
-          </div>
-          <div class="bento-badge-list">
-            <span class="bento-badge">Immediate Availability</span>
-            <span class="bento-badge">Hybrid / On-site Jakarta</span>
-            <span class="bento-badge">Remote Capable</span>
+            <div class="story-badges">
+              <span>Data Analyst Focus</span>
+              <span>Data Mining &amp; Analytics</span>
+              <span>Open to All Tech Roles</span>
+              <span>Hybrid / Remote Jakarta</span>
+            </div>
           </div>
         </div>
 
-        <div class="bento-card corner-ticks reveal-element reveal-stagger-2">
-          <div>
-            <div class="bento-card-top">
-              <span class="bento-spec-tag">SPEC 03 // GLOBAL FREELANCE CLIENT</span>
-              <span class="bento-icon-badge">[AUS // 2024–PRES]</span>
-            </div>
-            <h3 class="bento-title">Freelance Short-Form Video Editor</h3>
-            <p class="bento-body">
+        <div class="h-panel h-panel-card">
+          <div class="story-card">
+            <span class="story-label">Global Freelance · 2024–Present</span>
+            <h3 class="story-heading">Short-Form Video Editor</h3>
+            <p class="story-body">
               Contracted by an Australian client to craft high-retention short-form video content.
-              Specialized in <strong>CapCut Desktop</strong>, actively analyzing client preferences to
-              <strong>drastically reduce revision cycles</strong> while delivering dozens of short-form videos across
-              <strong>TikTok, YouTube Shorts, and Instagram Reels</strong>.
+              Specialized in <strong>CapCut Desktop</strong>, analyzing client preferences to
+              <strong>drastically reduce revision cycles</strong> while delivering dozens of
+              videos across TikTok, YouTube Shorts, and Instagram Reels.
             </p>
-          </div>
-          <div class="bento-badge-list">
-            <span class="bento-badge">CapCut Desktop</span>
-            <span class="bento-badge">Minimal Revisions</span>
-            <span class="bento-badge">TikTok · Shorts · Reels</span>
+            <div class="story-badges">
+              <span>CapCut Desktop</span>
+              <span>Minimal Revisions</span>
+              <span>TikTok · Shorts · Reels</span>
+            </div>
           </div>
         </div>
+
+        <div class="h-panel h-panel-metrics">
+          <div class="metric-grid">
+            <div class="metric-box">
+              <span class="metric-val counter" data-target="3.62" data-decimals="2">0</span>
+              <span class="metric-unit">/ 4.00 GPA</span>
+              <span class="metric-label">Academic Standing</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val counter" data-target="20">0</span>
+              <span class="metric-unit">+ Assets</span>
+              <span class="metric-label">Short-Form Videos Delivered</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val counter" data-target="60">0</span>
+              <span class="metric-unit">%</span>
+              <span class="metric-label">Dimensionality Reduction via PCA</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val">&lt;12</span>
+              <span class="metric-unit">Hours</span>
+              <span class="metric-label">Revision Turnaround (from 48h)</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="section-wrapper" id="projects">
-      <div class="section-header-bar reveal-element">
-        <div class="section-tag-group">
-          <span class="telemetry-tag"><span class="tag-bracket">[</span> 02 // TECHNICAL BUILDS <span
-              class="tag-bracket">]</span></span>
-          <h2 class="section-headline">Verified Engineering</h2>
-        </div>
-        <span class="section-badge-counter">4 SHOWCASED BUILDS</span>
+    <!-- ═══ PROJECTS — Vertical scroll, pinned reveals ═══ -->
+    <section class="section-projects" id="projects">
+      <div class="projects-header">
+        <span class="section-idx">02</span>
+        <h2 class="section-title">Selected Work</h2>
+        <span class="section-count">04 Projects</span>
       </div>
 
-      <div class="filter-bar reveal-element" role="tablist" aria-label="Project category filters">
-        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">[ All Builds // 04
-          ]</button>
-        <button class="filter-btn" data-filter="data" role="tab" aria-selected="false">[ Data &amp; Analytics // 01
-          ]</button>
-        <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">[ Full-Stack &amp; CMS // 02
-          ]</button>
-        <button class="filter-btn" data-filter="video" role="tab" aria-selected="false">[ Video Editing // 01
-          ]</button>
-      </div>
+      <div class="projects-stack">
 
-      <div class="projects-race-grid">
-
-        <article class="project-race-card lead-build corner-ticks reveal-element" data-category="data">
-          <div>
-            <div class="card-telemetry-header">
-              <div class="card-pos-tag">
-                <span class="pos-num">P01</span>
-                <span class="pos-category">DATA SCIENCE // ACADEMIC RESEARCH 2026</span>
-              </div>
-              <span class="card-role-pill">LEAD DATA ANALYST</span>
+        <article class="project-card" data-category="data">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-num">01</span>
+              <span class="project-cat">Data Science · Academic 2026</span>
+              <span class="project-role">Lead Data Analyst</span>
             </div>
-
-            <h3 class="project-title">Air Quality Environmental Data Mining</h3>
-
-            <p class="project-narrative">
-              Exploratory data analytics and statistical modeling over multi-dimensional AQICN sensor datasets.
-              Engineered feature correlation matrices and standardized normalization pipelines in Python and MATLAB,
-              translating complex multidimensional findings into visual distribution reports for localized anomaly
-              detection.
+            <h3 class="project-name">Air Quality Environmental Data Mining</h3>
+            <p class="project-desc">
+              Exploratory data analytics over multi-dimensional AQICN sensor datasets.
+              Engineered feature correlation matrices and normalization pipelines in Python and MATLAB.
             </p>
-
-            <div class="impact-telemetry-box">
-              <span class="impact-header-label">// Measurable Telemetry Impact</span>
-              <p class="impact-detail-text">
-                Identified 4 distinct regional pollution clusters across Indonesian monitoring stations; reduced dataset
-                dimensionality by 60% while retaining over 85% of total variance via PCA.
-              </p>
+            <div class="project-impact">
+              <span class="impact-label">Impact</span>
+              <p>Identified 4 distinct regional pollution clusters; reduced dataset dimensionality by 60%
+                while retaining over 85% of total variance via PCA.</p>
             </div>
-
-            <div class="project-stack-strip">
-              <span class="stack-tag">Python</span>
-              <span class="stack-tag">Pandas</span>
-              <span class="stack-tag">NumPy</span>
-              <span class="stack-tag">Matplotlib</span>
-              <span class="stack-tag">K-Means Clustering</span>
-              <span class="stack-tag">PCA</span>
-              <span class="stack-tag">MATLAB</span>
+            <div class="project-stack">
+              <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
+              <span>K-Means</span><span>PCA</span><span>MATLAB</span>
             </div>
-          </div>
-
-          <div class="project-card-footer">
-            <span>Environmental Analytics Pipeline</span>
-            <svg class="action-arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
           </div>
         </article>
 
-        <article class="project-race-card corner-ticks reveal-element" data-category="web">
-          <div>
-            <div class="card-telemetry-header">
-              <div class="card-pos-tag">
-                <span class="pos-num">P02</span>
-                <span class="pos-category">FULL-STACK WEB // CLIENT WORK 2026</span>
-              </div>
-              <span class="card-role-pill">TEAM OF 5</span>
+        <article class="project-card" data-category="web">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-num">02</span>
+              <span class="project-cat">Full-Stack Web · Client 2026</span>
+              <span class="project-role">Team of 5</span>
             </div>
-
-            <h3 class="project-title">TenThirty · Education &amp; CMS Platform</h3>
-
-            <p class="project-narrative">
-              Full-stack appointment scheduling and administrative content platform. Designed custom CMS administrative
-              dashboard integrated with MongoDB Atlas and Node.js, and standardized modular TypeScript components.
+            <h3 class="project-name">TenThirty · Education &amp; CMS Platform</h3>
+            <p class="project-desc">
+              Full-stack appointment scheduling and administrative content platform.
+              Custom CMS dashboard integrated with MongoDB Atlas and Node.js.
             </p>
-
-            <div class="impact-telemetry-box">
-              <span class="impact-header-label">// Measurable Telemetry Impact</span>
-              <p class="impact-detail-text">
-                Reduced routine client site-update overhead by 100%; boosted appointment conversion velocity by 25% with
-                low-latency client validation; maintained 100% on-time milestone delivery.
-              </p>
+            <div class="project-impact">
+              <span class="impact-label">Impact</span>
+              <p>Reduced client update overhead by 100%; boosted appointment conversion by 25%;
+                100% on-time milestone delivery.</p>
             </div>
-
-            <div class="project-stack-strip">
-              <span class="stack-tag">Next.js</span>
-              <span class="stack-tag">TypeScript</span>
-              <span class="stack-tag">Node.js</span>
-              <span class="stack-tag">MongoDB Atlas</span>
-              <span class="stack-tag">Express</span>
-              <span class="stack-tag">REST APIs</span>
+            <div class="project-stack">
+              <span>Next.js</span><span>TypeScript</span><span>Node.js</span>
+              <span>MongoDB Atlas</span><span>Express</span><span>REST APIs</span>
             </div>
-          </div>
-
-          <div class="project-card-footer">
-            <span>CMS &amp; Booking Architecture</span>
-            <svg class="action-arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
           </div>
         </article>
 
-        <article class="project-race-card corner-ticks reveal-element" data-category="web">
-          <div>
-            <div class="card-telemetry-header">
-              <div class="card-pos-tag">
-                <span class="pos-num">P03</span>
-                <span class="pos-category">E-COMMERCE &amp; ANALYTICS // 2024</span>
-              </div>
-              <span class="card-role-pill">TEAM OF 5</span>
+        <article class="project-card" data-category="web">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-num">03</span>
+              <span class="project-cat">E-Commerce · 2024</span>
+              <span class="project-role">Team of 5</span>
             </div>
-
-            <h3 class="project-title">PickaBrick · Secondary Marketplace</h3>
-
-            <p class="project-narrative">
-              Lego secondary resell marketplace with real-time stock monitoring. Built merchant analytics tracking SKU
-              levels
-              and secondary market price fluctuations using MongoDB aggregation queries.
+            <h3 class="project-name">PickaBrick · Secondary Marketplace</h3>
+            <p class="project-desc">
+              Lego secondary resell marketplace with real-time stock monitoring.
+              Built merchant analytics tracking SKU levels and price fluctuations.
             </p>
-
-            <div class="impact-telemetry-box">
-              <span class="impact-header-label">// Measurable Telemetry Impact</span>
-              <p class="impact-detail-text">
-                Accelerated merchant restocking decisions by 40%; streamlined customer purchase flow by 20%; ensured
-                99.9% uptime with zero storefront data discrepancies.
-              </p>
+            <div class="project-impact">
+              <span class="impact-label">Impact</span>
+              <p>Accelerated merchant restocking by 40%; streamlined purchase flow by 20%;
+                99.9% uptime with zero data discrepancies.</p>
             </div>
-
-            <div class="project-stack-strip">
-              <span class="stack-tag">Next.js</span>
-              <span class="stack-tag">React</span>
-              <span class="stack-tag">MongoDB Aggregation</span>
-              <span class="stack-tag">RESTful APIs</span>
-              <span class="stack-tag">Data Caching</span>
+            <div class="project-stack">
+              <span>Next.js</span><span>React</span><span>MongoDB</span>
+              <span>REST APIs</span><span>Data Caching</span>
             </div>
-          </div>
-
-          <div class="project-card-footer">
-            <span>Marketplace Analytics Engine</span>
-            <svg class="action-arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
           </div>
         </article>
 
-        <article class="project-race-card corner-ticks reveal-element" data-category="video">
-          <div>
-            <div class="card-telemetry-header">
-              <div class="card-pos-tag">
-                <span class="pos-num">P04</span>
-                <span class="pos-category">SHORT-FORM VIDEO EDITING // 2024–PRESENT</span>
-              </div>
-              <span class="card-role-pill">REMOTE FREELANCE</span>
+        <article class="project-card" data-category="video">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-num">04</span>
+              <span class="project-cat">Short-Form Video · 2024–Present</span>
+              <span class="project-role">Remote Freelance</span>
             </div>
-
-            <h3 class="project-title">Short-Form Video Production &amp; Editing</h3>
-
-            <p class="project-narrative">
-              Produced and edited high-retention short-form videos for an Australian client, utilizing editing
-              software with primary expertise in CapCut Desktop. Adapted dynamically to client aesthetic preferences
-              and audience engagement trends to significantly cut revision turnaround while sustaining rapid delivery schedules.
+            <h3 class="project-name">Short-Form Video Production &amp; Editing</h3>
+            <p class="project-desc">
+              High-retention short-form videos for an Australian client.
+              CapCut Desktop with dynamic adaptation to audience engagement trends.
             </p>
-
-            <div class="impact-telemetry-box">
-              <span class="impact-header-label">// Measurable Production Impact</span>
-              <p class="impact-detail-text">
-                Delivered dozens of short-form videos across TikTok, YouTube Shorts, and Instagram Reels;
-                slashed revision cycles from 48h to &lt;12h through proactive adaptation to client preferences; 100% on-time milestone delivery.
-              </p>
+            <div class="project-impact">
+              <span class="impact-label">Impact</span>
+              <p>Dozens of videos across TikTok, YouTube Shorts, and Instagram Reels;
+                revision cycles slashed from 48h to &lt;12h; 100% on-time delivery.</p>
             </div>
-
-            <div class="project-stack-strip">
-              <span class="stack-tag">CapCut Desktop</span>
-              <span class="stack-tag">Short-Form Video</span>
-              <span class="stack-tag">TikTok &amp; Reels</span>
-              <span class="stack-tag">YouTube Shorts</span>
-              <span class="stack-tag">Pacing &amp; Retention</span>
-              <span class="stack-tag">Rapid Revision Cycles</span>
+            <div class="project-stack">
+              <span>CapCut Desktop</span><span>Short-Form Video</span><span>TikTok &amp; Reels</span>
+              <span>YouTube Shorts</span><span>Pacing &amp; Retention</span>
             </div>
-          </div>
-
-          <div class="project-card-footer">
-            <span>Short-Form Video Production</span>
-            <svg class="action-arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
           </div>
         </article>
 
       </div>
     </section>
 
-    <section class="section-wrapper" id="skills">
-      <div class="section-header-bar reveal-element">
-        <div class="section-tag-group">
-          <span class="telemetry-tag"><span class="tag-bracket">[</span> 03 // TECHNICAL SPECIFICATIONS <span
-              class="tag-bracket">]</span></span>
-          <h2 class="section-headline">Toolkit</h2>
-        </div>
-        <span class="section-badge-counter">24 TOOLS · 5 DISCIPLINES</span>
+    <!-- ═══ SKILLS — Horizontal scroll reverse ═══ -->
+    <section class="section-skills" id="skills">
+      <div class="skills-header">
+        <span class="section-idx">03</span>
+        <h2 class="section-title">Toolkit</h2>
+        <span class="section-count">24 Tools · 5 Disciplines</span>
       </div>
 
-      <div class="toolkit-grid-container reveal-element">
-        <!-- 01 Languages -->
-        <div class="toolkit-category-row">
-          <div class="toolkit-cat-label">
-            <span class="cat-idx">01</span>
-            <span class="cat-name">LANGUAGES</span>
-          </div>
-          <div class="toolkit-pill-cluster">
-            <span class="toolkit-pill"><span class="pill-dot"></span>Python</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>SQL (Relational &amp; Aggregation)</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>TypeScript</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>JavaScript (ES6+)</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>PHP</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Dart</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>C#</span>
-          </div>
-        </div>
+      <div class="skills-horizontal-wrap">
+        <div class="skills-track">
 
-        <!-- 02 Data & Analytics -->
-        <div class="toolkit-category-row">
-          <div class="toolkit-cat-label">
-            <span class="cat-idx">02</span>
-            <span class="cat-name">DATA &amp; ANALYTICS</span>
+          <div class="skill-group">
+            <span class="skill-group-idx">01</span>
+            <h3 class="skill-group-name">Languages</h3>
+            <div class="skill-pills">
+              <span>Python</span>
+              <span>SQL</span>
+              <span>TypeScript</span>
+              <span>JavaScript (ES6+)</span>
+              <span>PHP</span>
+              <span>Dart</span>
+              <span>C#</span>
+            </div>
           </div>
-          <div class="toolkit-pill-cluster">
-            <span class="toolkit-pill highlighted"><span class="pill-dot"></span>Pandas</span>
-            <span class="toolkit-pill highlighted"><span class="pill-dot"></span>NumPy</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Matplotlib</span>
-            <span class="toolkit-pill highlighted"><span class="pill-dot"></span>K-Means Clustering</span>
-            <span class="toolkit-pill highlighted"><span class="pill-dot"></span>PCA Dimensionality Reduction</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Scikit-learn</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>MATLAB</span>
-          </div>
-        </div>
 
-        <!-- 03 Frameworks & Web -->
-        <div class="toolkit-category-row">
-          <div class="toolkit-cat-label">
-            <span class="cat-idx">03</span>
-            <span class="cat-name">FRAMEWORKS &amp; WEB</span>
+          <div class="skill-group">
+            <span class="skill-group-idx">02</span>
+            <h3 class="skill-group-name">Data &amp; Analytics</h3>
+            <div class="skill-pills">
+              <span class="highlight">Pandas</span>
+              <span class="highlight">NumPy</span>
+              <span>Matplotlib</span>
+              <span class="highlight">K-Means Clustering</span>
+              <span class="highlight">PCA</span>
+              <span>Scikit-learn</span>
+              <span>MATLAB</span>
+            </div>
           </div>
-          <div class="toolkit-pill-cluster">
-            <span class="toolkit-pill highlighted"><span class="pill-dot"></span>Next.js</span>
-            <span class="toolkit-pill highlighted"><span class="pill-dot"></span>React</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Node.js</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Express.js</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>RESTful APIs</span>
-          </div>
-        </div>
 
-        <!-- 04 Databases -->
-        <div class="toolkit-category-row">
-          <div class="toolkit-cat-label">
-            <span class="cat-idx">04</span>
-            <span class="cat-name">DATABASES</span>
+          <div class="skill-group">
+            <span class="skill-group-idx">03</span>
+            <h3 class="skill-group-name">Frameworks &amp; Web</h3>
+            <div class="skill-pills">
+              <span class="highlight">Next.js</span>
+              <span class="highlight">React</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>REST APIs</span>
+            </div>
           </div>
-          <div class="toolkit-pill-cluster">
-            <span class="toolkit-pill highlighted"><span class="pill-dot"></span>MongoDB Atlas</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>MySQL</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Relational Schema Architecture</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Aggregation Pipelines</span>
-          </div>
-        </div>
 
-        <!-- 05 Tools & Production -->
-        <div class="toolkit-category-row">
-          <div class="toolkit-cat-label">
-            <span class="cat-idx">05</span>
-            <span class="cat-name">TOOLS &amp; PRODUCTION</span>
+          <div class="skill-group">
+            <span class="skill-group-idx">04</span>
+            <h3 class="skill-group-name">Databases</h3>
+            <div class="skill-pills">
+              <span class="highlight">MongoDB Atlas</span>
+              <span>MySQL</span>
+              <span>Relational Schema</span>
+              <span>Aggregation Pipelines</span>
+            </div>
           </div>
-          <div class="toolkit-pill-cluster">
-            <span class="toolkit-pill"><span class="pill-dot"></span>Git &amp; GitHub</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Postman</span>
-            <span class="toolkit-pill highlighted"><span class="pill-dot"></span>CapCut Desktop</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Vercel</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Linux / CLI</span>
-            <span class="toolkit-pill"><span class="pill-dot"></span>Google Sheets &amp; Excel</span>
+
+          <div class="skill-group">
+            <span class="skill-group-idx">05</span>
+            <h3 class="skill-group-name">Tools &amp; Production</h3>
+            <div class="skill-pills">
+              <span>Git &amp; GitHub</span>
+              <span>Postman</span>
+              <span class="highlight">CapCut Desktop</span>
+              <span>Vercel</span>
+              <span>Linux / CLI</span>
+              <span>Google Sheets &amp; Excel</span>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section-wrapper" id="contact">
-      <div class="contact-launchpad corner-ticks reveal-element">
-        <div class="contact-header-wrap">
-          <span class="telemetry-tag"><span class="tag-bracket">[</span> 04 // INQUIRY <span
-              class="tag-bracket">]</span></span>
-          <h2 class="contact-huge-headline">
-            Looking for a high-impact intern?<br />
-            <span class="outline-span">Let's connect.</span>
-          </h2>
-          <p class="contact-lead-sub">
-            Available for <strong>Data Analytics and Software Engineering Internships</strong>.
-            Ready to dive into automated pipelines, quantitative decision models, and high-performance full-stack
-            architectures.
-          </p>
-        </div>
+    <!-- ═══ CONTACT — Full viewport CTA ═══ -->
+    <section class="section-contact" id="contact">
+      <div class="contact-inner">
+        <span class="section-idx">04</span>
+        <h2 class="contact-headline reveal">
+          Looking for a<br />high-impact intern?
+        </h2>
+        <p class="contact-sub reveal">
+          Available for <strong>Data Analyst</strong>, data-centric positions, and <strong>open to all technology internships</strong>.
+        </p>
 
-        <div class="contact-channels-grid">
-          <a href="mailto:fagastocarlo@gmail.com" class="channel-card">
-            <div class="channel-data">
-              <span class="channel-label">DIRECT EMAIL // FAST RESPONSE</span>
-              <span class="channel-value">fagastocarlo@gmail.com</span>
-            </div>
-            <svg class="channel-action-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M3 5h14v10H3V5zm0 1l7 5 7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
+        <div class="contact-grid reveal">
+          <a href="mailto:fagastocarlo@gmail.com" class="contact-link">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">fagastocarlo@gmail.com</span>
           </a>
-
-          <a href="tel:+6285157113664" class="channel-card">
-            <div class="channel-data">
-              <span class="channel-label">PHONE / WHATSAPP DIRECT</span>
-              <span class="channel-value">+62 851-5711-3664</span>
-            </div>
-            <svg class="channel-action-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M4 3h4l2 4-2.5 1.5a11 11 0 005 5L14 11l4 2v4a2 2 0 01-2 2C8 19 1 12 1 4a2 2 0 012-1z"
-                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+          <a href="tel:+6285157113664" class="contact-link">
+            <span class="contact-link-label">Phone / WhatsApp</span>
+            <span class="contact-link-value">+62 851-5711-3664</span>
           </a>
-
-          <a href="https://github.com/rinosen" target="_blank" rel="noopener noreferrer" class="channel-card">
-            <div class="channel-data">
-              <span class="channel-label">GITHUB REPOSITORIES</span>
-              <span class="channel-value">github.com/rinosen</span>
-            </div>
-            <svg class="channel-action-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M3 17L17 3M17 3H7M17 3V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
+          <a href="https://github.com/rinosen" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <span class="contact-link-label">GitHub</span>
+            <span class="contact-link-value">github.com/rinosen</span>
           </a>
-
-          <div class="channel-card static-info">
-            <div class="channel-data">
-              <span class="channel-label">PRIMARY HEADQUARTERS</span>
-              <span class="channel-value">Jakarta, Indonesia (WIB)</span>
-            </div>
-            <svg class="channel-action-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M10 2a6 6 0 00-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 00-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z"
-                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-            </svg>
-          </div>
-        </div>
-
-        <div class="direct-inquiry-ribbon">
-          <div class="inquiry-instruction">
-            <span>SHORTCUTS:</span>
-            <span class="keyboard-hint-pill">[T] THEME</span>
-            <span class="keyboard-hint-pill">[P] BUILDS</span>
-            <span class="keyboard-hint-pill">[C] CONTACT</span>
-            <span class="keyboard-hint-pill">[H] TOP</span>
+          <div class="contact-link contact-link--static">
+            <span class="contact-link-label">Location</span>
+            <span class="contact-link-value">Jakarta, Indonesia</span>
           </div>
         </div>
       </div>
@@ -718,30 +419,14 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner-content">
-      <div class="footer-left-identity">
-        <span class="footer-logo-tag">CF.DEV</span>
-        <span class="footer-copy-text">© 2026 Carlo Fagasto · Universitas Tarumanagara · Jakarta, Indonesia</span>
-      </div>
-
-      <div class="footer-right-actions">
-        <span class="footer-status-tag">SYS: NOMINAL // ALL SYSTEMS GO</span>
-        <a href="#home" class="back-to-top-btn" aria-label="Return to top of page">
-          <span>TOP</span>
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-            <path d="M5 8.5V1.5M1.5 5L5 1.5L8.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </a>
-      </div>
+    <div class="footer-inner">
+      <span class="footer-brand">Carlo Fagasto © 2026</span>
+      <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">↑ Top</button>
     </div>
   </footer>
 
-  <div id="telemetry-toast" class="telemetry-toast" role="status" aria-live="polite">
-    <span class="toast-dot" aria-hidden="true"></span>
-    <span id="toast-message">EMAIL COPIED TO CLIPBOARD</span>
-  </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 
