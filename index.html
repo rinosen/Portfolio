@@ -15,6 +15,15 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    window.scrollTo(0, 0);
+  </script>
   <noscript>
     <style>
       .reveal { opacity: 1 !important; transform: none !important; }
@@ -25,7 +34,7 @@
 
 <body>
 
-  <!-- ═══ HEADER ═══ -->
+  <!-- Header -->
   <header class="site-header" id="site-header">
     <nav class="nav-container">
       <a href="#home" class="nav-brand">CF</a>
@@ -37,17 +46,6 @@
         <a href="#contact" class="nav-link">Contact</a>
       </div>
       <div class="nav-actions">
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round">
-            <circle cx="12" cy="12" r="5" />
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-          </svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-          </svg>
-        </button>
         <a href="#contact" class="nav-cta">Let's Talk</a>
       </div>
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
@@ -58,33 +56,28 @@
 
   <main>
 
-    <!-- ═══ HERO — Face centered, cutout with moving texture background ═══ -->
+    <!-- Hero -->
     <section class="section-hero" id="home">
       <div class="hero-inner">
-        <!-- Moving background video texture -->
         <video class="hero-bg-video" autoplay loop muted playsinline preload="auto" aria-hidden="true">
           <source src="hero-texture.mp4" type="video/mp4" />
         </video>
         <div class="hero-bg-overlay" aria-hidden="true"></div>
 
-        <!-- Big Name Backdrop — Layered behind portrait -->
         <div class="hero-name-backdrop" aria-hidden="true">
           <span class="hero-line hero-line-top">Carlo</span>
           <span class="hero-line hero-line-bottom">Fagasto</span>
         </div>
 
-        <!-- Centered Subject Cutout Portrait (Background removed) -->
         <div class="hero-portrait-wrap">
           <img src="Foto_Potrait_Cutout.png" alt="Carlo Fagasto portrait photograph" class="hero-portrait" width="960" height="1280" fetchpriority="high" />
         </div>
 
-        <!-- Top Status Badge — Persistent at top -->
         <div class="hero-status-top">
           <span class="status-pulse-dot" aria-hidden="true"></span>
           <span>Semester 5 · 3.62 GPA · Universitas Tarumanagara</span>
         </div>
 
-        <!-- Bottom Role Pill -->
         <div class="hero-bottom-info">
           <div class="hero-role-badge reveal">
             <span class="role-primary">Data Analyst</span>
@@ -93,7 +86,6 @@
           </div>
         </div>
 
-        <!-- Dedicated Scroll Cue -->
         <div class="hero-scroll-cue" aria-hidden="true">
           <span>Scroll</span>
           <svg width="14" height="22" viewBox="0 0 16 24" fill="none">
@@ -104,91 +96,163 @@
       </div>
     </section>
 
-    <!-- ═══ ABOUT — Horizontal scroll section ═══ -->
+    <!-- About -->
     <section class="section-horizontal" id="about">
+      <div class="about-bg-watermark" aria-hidden="true">DATA // ANALYTICS // VELOCITY</div>
+
       <div class="horizontal-track">
 
         <div class="h-panel h-panel-intro">
-          <span class="panel-idx">01</span>
+          <span class="panel-idx">01 / ABOUT</span>
           <h2 class="panel-title">Foundation<br />&amp; Speed</h2>
+          <p class="panel-desc">
+            Informatics Engineering undergraduate bridging quantitative analytics and dimensional modeling with rapid, high-retention digital execution.
+          </p>
+          <div class="panel-scroll-hint">
+            <span class="hint-dot"></span>
+            <span>Explore Background →</span>
+          </div>
         </div>
 
         <div class="h-panel h-panel-card">
           <div class="story-card">
-            <span class="story-label">Higher Education</span>
+            <div class="story-card-top">
+              <span class="story-card-num">01</span>
+              <span class="story-label">Academic Standing</span>
+            </div>
             <h3 class="story-heading">Universitas Tarumanagara</h3>
+            <div class="story-highlight-pill">
+              <span class="pill-dot"></span>
+              <strong>GPA 3.62 / 4.00</strong>
+              <span class="pill-sep">·</span>
+              <span>Semester 5 · Exp. 2028</span>
+            </div>
             <p class="story-body">
-              B.S. in Informatics Engineering (Semester 5) · Expected 2028.
-              Maintained a cumulative <strong>GPA of 3.62 / 4.00</strong> with focus on
-              Data Mining, Database Engineering, Algorithms &amp; Data Structures,
-              Object-Oriented Systems, and Applied Probability &amp; Statistics.
+              Pursuing B.S. in Informatics Engineering with consistent academic excellence.
+              Specialized focus on <strong>Data Mining, Database Systems, Algorithms &amp; Data Structures,</strong>
+              and applied probability &amp; statistics for quantitative analysis.
             </p>
+            <div class="story-meta-grid">
+              <div class="story-meta-item">
+                <span class="meta-label">Discipline</span>
+                <span class="meta-val">Informatics Eng.</span>
+              </div>
+              <div class="story-meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-val">Jakarta, Indonesia</span>
+              </div>
+            </div>
             <div class="story-badges">
-              <span>GPA 3.62 / 4.00</span>
               <span>Data Mining</span>
               <span>Database Systems</span>
               <span>Algorithms</span>
+              <span>Statistics</span>
             </div>
           </div>
         </div>
 
         <div class="h-panel h-panel-card">
           <div class="story-card story-card--accent">
-            <span class="story-label">Target Role &amp; Adaptability</span>
+            <div class="story-card-top">
+              <span class="story-card-num">02</span>
+              <span class="story-label">Target Role</span>
+            </div>
             <h3 class="story-heading">Data Analyst · Open to All Roles</h3>
+            <div class="story-highlight-pill story-highlight-pill--accent">
+              <span class="pill-dot"></span>
+              <strong>Available for Internships</strong>
+              <span class="pill-sep">·</span>
+              <span>Hybrid / Remote Jakarta</span>
+            </div>
             <p class="story-body">
-              Primary career focus on <strong>Data Analyst</strong> and data-driven disciplines.
-              Equally versatile, proactive, and <strong>open to all technology and software engineering internships</strong>,
-              ready to deploy analytical pipelines, predictive models (PCA/K-Means), and quantitative solutions that accelerate team execution.
+              Primary career dedication to <strong>Data Analyst</strong>, business intelligence, and ETL pipelines.
+              Equally adaptable, proactive, and <strong>open to all technology and software engineering internships</strong>,
+              ready to deploy predictive clustering (PCA/K-Means) and data-backed solutions.
             </p>
+            <div class="story-meta-grid">
+              <div class="story-meta-item">
+                <span class="meta-label">Analytical Toolkit</span>
+                <span class="meta-val">Python, SQL, PCA</span>
+              </div>
+              <div class="story-meta-item">
+                <span class="meta-label">Placement</span>
+                <span class="meta-val">Immediate Availability</span>
+              </div>
+            </div>
             <div class="story-badges">
               <span>Data Analyst Focus</span>
-              <span>Data Mining &amp; Analytics</span>
+              <span>Pipeline Modeling</span>
               <span>Open to All Tech Roles</span>
-              <span>Hybrid / Remote Jakarta</span>
+              <span>High Adaptability</span>
             </div>
           </div>
         </div>
 
         <div class="h-panel h-panel-card">
           <div class="story-card">
-            <span class="story-label">Global Freelance · 2024–Present</span>
-            <h3 class="story-heading">Short-Form Video Editor</h3>
+            <div class="story-card-top">
+              <span class="story-card-num">03</span>
+              <span class="story-label">Global Production</span>
+            </div>
+            <h3 class="story-heading">Short-Form Video Production</h3>
+            <div class="story-highlight-pill">
+              <span class="pill-dot"></span>
+              <strong>Australian Creator Client</strong>
+              <span class="pill-sep">·</span>
+              <span>2024–Present</span>
+            </div>
             <p class="story-body">
-              Contracted by an Australian client to craft high-retention short-form video content.
-              Specialized in <strong>CapCut Desktop</strong>, analyzing client preferences to
-              <strong>drastically reduce revision cycles</strong> while delivering dozens of
-              videos across TikTok, YouTube Shorts, and Instagram Reels.
+              Contracted by an Australian client to direct and edit high-retention short-form assets.
+              Specialized in <strong>CapCut Desktop</strong>, analyzing retention curves to
+              <strong>slash revision turnaround from 48h to &lt;12h</strong> with 100% on-time milestone delivery.
             </p>
+            <div class="story-meta-grid">
+              <div class="story-meta-item">
+                <span class="meta-label">Output Delivered</span>
+                <span class="meta-val">20+ Video Assets</span>
+              </div>
+              <div class="story-meta-item">
+                <span class="meta-label">Turnaround</span>
+                <span class="meta-val">&lt;12h (Slashed from 48h)</span>
+              </div>
+            </div>
             <div class="story-badges">
               <span>CapCut Desktop</span>
               <span>Minimal Revisions</span>
               <span>TikTok · Shorts · Reels</span>
+              <span>Retention Strategy</span>
             </div>
           </div>
         </div>
 
         <div class="h-panel h-panel-metrics">
-          <div class="metric-grid">
-            <div class="metric-box">
-              <span class="metric-val counter" data-target="3.62" data-decimals="2">0</span>
-              <span class="metric-unit">/ 4.00 GPA</span>
-              <span class="metric-label">Academic Standing</span>
+          <div class="story-card story-card--metrics">
+            <div class="story-card-top">
+              <span class="story-card-num">04</span>
+              <span class="story-label">Quantified Proof</span>
             </div>
-            <div class="metric-box">
-              <span class="metric-val counter" data-target="20">0</span>
-              <span class="metric-unit">+ Assets</span>
-              <span class="metric-label">Short-Form Videos Delivered</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-val counter" data-target="60">0</span>
-              <span class="metric-unit">%</span>
-              <span class="metric-label">Dimensionality Reduction via PCA</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-val">&lt;12</span>
-              <span class="metric-unit">Hours</span>
-              <span class="metric-label">Revision Turnaround (from 48h)</span>
+            <h3 class="story-heading">Impact by the Numbers</h3>
+            <div class="metric-grid">
+              <div class="metric-box">
+                <span class="metric-val counter" data-target="3.62" data-decimals="2">0</span>
+                <span class="metric-unit">/ 4.00 GPA</span>
+                <span class="metric-label">Academic Standing (Tarumanagara)</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-val counter" data-target="20">0</span>
+                <span class="metric-unit">+ Assets</span>
+                <span class="metric-label">Short-Form Videos Delivered</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-val counter" data-target="60">0</span>
+                <span class="metric-unit">%</span>
+                <span class="metric-label">Dimensionality Reduction via PCA</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-val">&lt;12</span>
+                <span class="metric-unit">Hours</span>
+                <span class="metric-label">Turnaround Time (from 48h)</span>
+              </div>
             </div>
           </div>
         </div>
@@ -196,7 +260,7 @@
       </div>
     </section>
 
-    <!-- ═══ PROJECTS — Vertical scroll, pinned reveals ═══ -->
+    <!-- Projects -->
     <section class="section-projects" id="projects">
       <div class="projects-header">
         <span class="section-idx">02</span>
@@ -230,22 +294,72 @@
           </div>
         </article>
 
-        <article class="project-card" data-category="web">
+        <article class="project-card" data-category="automation">
           <div class="project-card-inner">
             <div class="project-meta">
               <span class="project-num">02</span>
+              <span class="project-cat">Media Engineering &amp; Automation · 2026</span>
+              <span class="project-role">Creator &amp; Core Engineer</span>
+            </div>
+            <h3 class="project-name">YouTube Virality Auto-Clipper CLI</h3>
+            <p class="project-desc">
+              Automated video ingestion and editing pipeline driven by a terminal CLI.
+              Transcribes audio tracks, evaluates retention potential via multi-factor virality scoring,
+              and programmatically slices and renders high-probability viral clips.
+            </p>
+            <div class="project-impact">
+              <span class="impact-label">Impact</span>
+              <p>Slashed long-form to short-form turnaround from hours to minutes; automated
+                subtitling, aspect ratio re-centering (9:16), and hook-window identification without manual scrubbing.</p>
+            </div>
+            <div class="project-stack">
+              <span>Python</span><span>FFmpeg</span><span>CLI Automation</span>
+              <span>Heuristic Scoring</span><span>Speech-to-Text</span><span>Audio Energy</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="ai">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-num">03</span>
+              <span class="project-cat">Generative AI &amp; Agentic Workflow · 2026</span>
+              <span class="project-role">Creator &amp; AI Engineer</span>
+            </div>
+            <h3 class="project-name">TikTok Content Reference Scout Agent</h3>
+            <p class="project-desc">
+              Autonomous AI research agent solving creative ideation bottlenecks for short-form production.
+              Parses natural language requirements (mood, pacing, aesthetic, narrative arc) to query, score,
+              and retrieve precise video reference candidates.
+            </p>
+            <div class="project-impact">
+              <span class="impact-label">Impact</span>
+              <p>Reduced client pre-production ideation from half-day manual searches to under 3 minutes;
+                powered reference curation across 20+ delivered client briefs with 100% style alignment.</p>
+            </div>
+            <div class="project-stack">
+              <span>Python</span><span>LLM Agents</span><span>Prompt Engineering</span>
+              <span>Semantic Search</span><span>API Integration</span><span>Workflow Automation</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="web">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-num">04</span>
               <span class="project-cat">Full-Stack Web · Client 2026</span>
-              <span class="project-role">Team of 5</span>
+              <span class="project-role">Team of 5 · Full-Stack Contributor</span>
             </div>
             <h3 class="project-name">TenThirty · Education &amp; CMS Platform</h3>
             <p class="project-desc">
               Full-stack appointment scheduling and administrative content platform.
-              Custom CMS dashboard integrated with MongoDB Atlas and Node.js.
+              Custom CMS dashboard integrated with MongoDB Atlas and Node.js with automated email notifications.
             </p>
             <div class="project-impact">
               <span class="impact-label">Impact</span>
               <p>Reduced client update overhead by 100%; boosted appointment conversion by 25%;
-                100% on-time milestone delivery.</p>
+                engineered transactional email dispatch and dynamic testimonial management.</p>
             </div>
             <div class="project-stack">
               <span>Next.js</span><span>TypeScript</span><span>Node.js</span>
@@ -254,63 +368,15 @@
           </div>
         </article>
 
-        <article class="project-card" data-category="web">
-          <div class="project-card-inner">
-            <div class="project-meta">
-              <span class="project-num">03</span>
-              <span class="project-cat">E-Commerce · 2024</span>
-              <span class="project-role">Team of 5</span>
-            </div>
-            <h3 class="project-name">PickaBrick · Secondary Marketplace</h3>
-            <p class="project-desc">
-              Lego secondary resell marketplace with real-time stock monitoring.
-              Built merchant analytics tracking SKU levels and price fluctuations.
-            </p>
-            <div class="project-impact">
-              <span class="impact-label">Impact</span>
-              <p>Accelerated merchant restocking by 40%; streamlined purchase flow by 20%;
-                99.9% uptime with zero data discrepancies.</p>
-            </div>
-            <div class="project-stack">
-              <span>Next.js</span><span>React</span><span>MongoDB</span>
-              <span>REST APIs</span><span>Data Caching</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="video">
-          <div class="project-card-inner">
-            <div class="project-meta">
-              <span class="project-num">04</span>
-              <span class="project-cat">Short-Form Video · 2024–Present</span>
-              <span class="project-role">Remote Freelance</span>
-            </div>
-            <h3 class="project-name">Short-Form Video Production &amp; Editing</h3>
-            <p class="project-desc">
-              High-retention short-form videos for an Australian client.
-              CapCut Desktop with dynamic adaptation to audience engagement trends.
-            </p>
-            <div class="project-impact">
-              <span class="impact-label">Impact</span>
-              <p>Dozens of videos across TikTok, YouTube Shorts, and Instagram Reels;
-                revision cycles slashed from 48h to &lt;12h; 100% on-time delivery.</p>
-            </div>
-            <div class="project-stack">
-              <span>CapCut Desktop</span><span>Short-Form Video</span><span>TikTok &amp; Reels</span>
-              <span>YouTube Shorts</span><span>Pacing &amp; Retention</span>
-            </div>
-          </div>
-        </article>
-
       </div>
     </section>
 
-    <!-- ═══ SKILLS — Horizontal scroll reverse ═══ -->
+    <!-- Skills -->
     <section class="section-skills" id="skills">
       <div class="skills-header">
         <span class="section-idx">03</span>
         <h2 class="section-title">Toolkit</h2>
-        <span class="section-count">24 Tools · 5 Disciplines</span>
+        <span class="section-count">26 Tools · 5 Disciplines</span>
       </div>
 
       <div class="skills-horizontal-wrap">
@@ -341,9 +407,9 @@
               <span class="highlight">PCA</span>
               <span>Scikit-learn</span>
               <span>MATLAB</span>
+              <span class="highlight">LLM Agents</span>
             </div>
           </div>
-
           <div class="skill-group">
             <span class="skill-group-idx">03</span>
             <h3 class="skill-group-name">Frameworks &amp; Web</h3>
@@ -373,6 +439,7 @@
             <div class="skill-pills">
               <span>Git &amp; GitHub</span>
               <span>Postman</span>
+              <span class="highlight">FFmpeg</span>
               <span class="highlight">CapCut Desktop</span>
               <span>Vercel</span>
               <span>Linux / CLI</span>
@@ -384,7 +451,7 @@
       </div>
     </section>
 
-    <!-- ═══ CONTACT — Full viewport CTA ═══ -->
+    <!-- Contact -->
     <section class="section-contact" id="contact">
       <div class="contact-inner">
         <span class="section-idx">04</span>

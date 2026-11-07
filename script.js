@@ -3,17 +3,29 @@
  * GSAP ScrollTrigger powered animations
  */
 
-const THEME_KEY = 'carlo-portfolio-theme';
+// Disable browser premature scroll restoration immediately
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+if (window.location.hash) {
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+window.scrollTo(0, 0);
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
+  window.scrollTo(0, 0);
   gsap.registerPlugin(ScrollTrigger);
 
   const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  initTheme();
   initHeroVideo();
   initHeader();
   initMobileNav();
+  initNavScroll();
   initHeroEntrance(prefersReduced);
 
   if (!prefersReduced) {
@@ -28,27 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initCounters();
   initBackToTop();
-});
 
-/* ═══ THEME ═══ */
-
-function initTheme() {
-  const toggle = document.getElementById('theme-toggle');
-  const saved = localStorage.getItem(THEME_KEY);
-  // Default theme is LIGHT mode as requested
-  const theme = saved || 'light';
-
-  document.documentElement.setAttribute('data-theme', theme);
-
-  toggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem(THEME_KEY, next);
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    ScrollTrigger.refresh();
   });
-}
-
-/* ═══ HERO VIDEO ═══ */
+});
 
 function initHeroVideo() {
   const video = document.querySelector('.hero-bg-video');
@@ -64,8 +61,6 @@ function initHeroVideo() {
   });
 }
 
-/* ═══ HEADER ═══ */
-
 function initHeader() {
   const header = document.getElementById('site-header');
   let ticking = false;
@@ -79,8 +74,6 @@ function initHeader() {
     });
   }, { passive: true });
 }
-
-/* ═══ MOBILE NAV ═══ */
 
 function initMobileNav() {
   const toggle = document.getElementById('mobile-toggle');
@@ -99,8 +92,6 @@ function initMobileNav() {
   });
 }
 
-/* ═══ HERO ENTRANCE ═══ */
-
 function initHeroEntrance(prefersReduced) {
   const portrait = document.querySelector('.hero-portrait');
 
@@ -115,7 +106,6 @@ function initHeroEntrance(prefersReduced) {
     return;
   }
 
-  // Staggered text entrance
   const reveals = document.querySelectorAll('.section-hero .reveal');
   reveals.forEach((el, i) => {
     gsap.fromTo(el,
@@ -124,8 +114,6 @@ function initHeroEntrance(prefersReduced) {
     );
   });
 }
-
-/* ═══ HERO PARALLAX ═══ */
 
 function initHeroParallax() {
   const portrait = document.querySelector('.hero-portrait');
@@ -190,59 +178,60 @@ function initHeroParallax() {
   }
 }
 
-/* ═══ HORIZONTAL SCROLL ═══ */
-
 function initHorizontalScroll() {
   const track = document.querySelector('.horizontal-track');
   if (!track) return;
 
-  const panels = track.querySelectorAll('.h-panel');
-  const totalWidth = track.scrollWidth - window.innerWidth;
+  // Mobile and tablet fall back to vertical flow via CSS
+  if (window.innerWidth <= 860) return;
 
-  // Main horizontal tween — store reference for containerAnimation
-  const scrollTween = gsap.to(track, {
-    x: -totalWidth,
-    ease: 'none',
+  // Calculate distance so the final card rests centered in viewport
+  const getDistanceToCenter = () => {
+    const lastPanel = track.querySelector('.h-panel-metrics') || track.lastElementChild;
+    if (!lastPanel) return Math.max(0, track.scrollWidth - window.innerWidth);
+    const cardCenter = lastPanel.offsetLeft + (lastPanel.offsetWidth / 2);
+    const winCenter = window.innerWidth / 2;
+    return Math.max(0, cardCenter - winCenter);
+  };
+
+  const pauseBuffer = 200; // reading buffer while Box 4 is held centered before unpinning
+
+  const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section-horizontal',
       start: 'top top',
-      end: () => '+=' + totalWidth,
+      end: () => '+=' + (getDistanceToCenter() + pauseBuffer),
       pin: true,
-      scrub: 1,
+      scrub: 0.8,
       invalidateOnRefresh: true,
       anticipatePin: 1,
     }
   });
 
-  // Reveal each panel as it enters the viewport during horizontal scroll
-  panels.forEach((panel) => {
-    const card = panel.querySelector('.story-card');
-    const metricGrid = panel.querySelector('.metric-grid');
+  tl.to(track, {
+    x: () => -getDistanceToCenter(),
+    ease: 'none',
+    duration: 1,
+  });
 
-    if (card) {
+  // Hold centered panel briefly before unpinning
+  tl.to({}, { duration: 0.2 });
+
+  const cards = track.querySelectorAll('.story-card');
+  cards.forEach((card, index) => {
+    // First card is already visible with the intro panel
+    if (index > 0) {
       gsap.fromTo(card,
-        { opacity: 0, y: 40 },
+        { opacity: 0.7, y: 24 },
         {
-          opacity: 1, y: 0, duration: 1, ease: 'expo.out',
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
           scrollTrigger: {
-            trigger: panel,
-            containerAnimation: scrollTween,
-            start: 'left 75%',
-            toggleActions: 'play none none reverse',
-          }
-        }
-      );
-    }
-
-    if (metricGrid) {
-      gsap.fromTo(metricGrid.children,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'expo.out',
-          scrollTrigger: {
-            trigger: panel,
-            containerAnimation: scrollTween,
-            start: 'left 75%',
+            trigger: card,
+            containerAnimation: tl,
+            start: 'left 92%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -251,7 +240,31 @@ function initHorizontalScroll() {
   });
 }
 
-/* ═══ SKILLS HORIZONTAL ═══ */
+function initNavScroll() {
+  document.querySelectorAll('.nav-link, .nav-brand, .nav-cta').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        scrollToTarget(href, 'smooth');
+      }
+    });
+  });
+}
+
+function scrollToTarget(hash, behavior = 'smooth') {
+  if (!hash || hash === '#') return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+
+  const st = ScrollTrigger.getAll().find(s => s.trigger === target);
+  const targetY = st ? st.start : target.getBoundingClientRect().top + window.scrollY;
+
+  window.scrollTo({
+    top: targetY,
+    behavior: behavior
+  });
+}
 
 function initSkillsScroll() {
   const track = document.querySelector('.skills-track');
@@ -272,8 +285,6 @@ function initSkillsScroll() {
   });
 }
 
-/* ═══ PROJECT REVEALS ═══ */
-
 function initProjectReveals() {
   const cards = document.querySelectorAll('.project-card');
 
@@ -292,8 +303,6 @@ function initProjectReveals() {
   });
 }
 
-/* ═══ CONTACT REVEALS ═══ */
-
 function initContactReveals() {
   const items = document.querySelectorAll('.section-contact .reveal');
 
@@ -311,8 +320,6 @@ function initContactReveals() {
     );
   });
 }
-
-/* ═══ COUNTERS ═══ */
 
 function initCounters() {
   const counters = document.querySelectorAll('.counter');
@@ -354,8 +361,6 @@ function runCounters(counters) {
   });
 }
 
-/* ═══ BACK TO TOP ═══ */
-
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (btn) {
@@ -365,12 +370,10 @@ function initBackToTop() {
   }
 }
 
-/* ═══ FALLBACK: show all content when reduced motion ═══ */
-
+// Fallback layout when reduced motion is preferred
 function showAllContent() {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 
-  // Make horizontal sections show vertically when no scroll animations
   const track = document.querySelector('.horizontal-track');
   if (track) {
     track.style.display = 'flex';
