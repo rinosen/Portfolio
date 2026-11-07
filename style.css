@@ -1447,96 +1447,110 @@ main {
   transform: translate(3px, -3px);
 }
 
-/* Skills */
+/* ==========================================================================
+   TOOLKIT (TECHNICAL SPECIFICATIONS)
+   ========================================================================== */
 
-.skills-matrix-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+.toolkit-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.spec-category-card {
+.toolkit-category-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  padding: 24px 28px;
   background: var(--bg-card);
-  backdrop-filter: var(--glass-material);
-  -webkit-backdrop-filter: var(--glass-material);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
-  padding: 28px;
-  position: relative;
+  backdrop-filter: var(--glass-material);
+  -webkit-backdrop-filter: var(--glass-material);
   box-shadow: var(--card-shadow);
-  transition: all var(--duration-normal) var(--ease-apple);
+  transition: border-color var(--duration-normal) var(--ease-apple),
+              transform var(--duration-normal) var(--ease-apple),
+              box-shadow var(--duration-normal) var(--ease-apple);
 }
 
-.spec-category-card:hover {
-  border-color: var(--border-strong);
-  background: var(--bg-card-hover);
-  transform: translateY(-3px);
-  box-shadow: var(--card-shadow-hover);
-}
-
-.spec-category-card.featured-spec {
+.toolkit-category-row:hover {
   border-color: rgba(48, 209, 88, 0.35);
-  box-shadow: var(--card-shadow), 0 0 28px rgba(48, 209, 88, 0.08);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
 }
 
-.spec-head {
+.toolkit-cat-label {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 20px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border-subtle);
 }
 
-.spec-idx {
+.cat-idx {
   font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 800;
-  background: var(--text-primary);
-  color: var(--text-inverse);
-  padding: 2px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--apple-green);
+  background: rgba(48, 209, 88, 0.1);
+  padding: 3px 8px;
   border-radius: var(--radius-xs);
+  flex-shrink: 0;
 }
 
-.spec-title {
-  font-family: var(--font-headline);
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  text-transform: none;
-}
-
-.spec-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.spec-item {
+.cat-name {
   font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-  transition: color var(--duration-fast) var(--ease-apple), transform var(--duration-fast) var(--ease-apple);
-}
-.spec-item::before {
-  content: "·";
-  color: var(--text-tertiary);
+  font-size: 13px;
   font-weight: 700;
-}
-
-.spec-category-card:hover .spec-item {
+  letter-spacing: 0.04em;
   color: var(--text-primary);
 }
 
-.spec-item:hover {
-  transform: translateX(4px);
+.toolkit-pill-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.toolkit-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) var(--ease-apple);
+}
+
+.toolkit-pill:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.toolkit-pill.highlighted {
+  color: var(--text-primary);
+  border-color: rgba(48, 209, 88, 0.35);
+  background: rgba(48, 209, 88, 0.08);
+}
+
+.toolkit-pill .pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--apple-green);
+}
+
+@media (max-width: 860px) {
+  .toolkit-category-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 20px;
+  }
 }
 
 /* Contact */
